@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FreeFolio - Freelancer Portfolio Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Free HTML Templates" name="keywords" />
+    <meta content="Free HTML Templates" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Contact Start -->
+    <div class="container-fluid py-5" id="contact">
+      <div class="container">
+        <div
+          class="position-relative d-flex align-items-center justify-content-center"
+        >
+          <h1 class="text-uppercase text-primary mb-4">QR Code Generator</h1>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="contact-form text-center">
+              <div id="success"></div>
+              <form action="/api/v1/qr" method="post">
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control p-4"
+                    id="urlname"
+                    placeholder="URL"
+                    required="required"
+                  />
+                </div>
+                <div>
+                  <button
+                    class="btn btn-outline-primary mb-4"
+                    id="QrButton"
+                    type="submit"
+                    onclick="{qrfunction()}"
+                  >
+                    Generate QR
+                  </button>
+                </div>
+                <div class="control-group">
+                  <input
+                    type="text"
+                    class="form-control p-4"
+                    id="email"
+                    placeholder="email"
+                    required="required"
+                  />
+                </div>
+                <div>
+                  <button
+                    class="btn btn-outline-primary"
+                    type="submit"
+                    id="sendEmailButton"
+                  >
+                    Send to Email
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
+    <div>
+      <!-- <img src="{{ url }}" alt="" srcset="" /> -->
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHQAAAB0CAYAAABUmhYnAAAAAklEQVR4AewaftIAAAKlSURBVO3BQW7jUAwFwX6E7n/lHi+5+oBgOXE4rIovrDGKNUqxRinWKMUapVijFGuUYo1SrFGKNUqxRinWKMUapVijFGuUYo1y8aYk/CSVkyTcoXKShJ+k8o5ijVKsUYo1ysXDVJ6UhDtUTpLwDpUnJeFJxRqlWKMUa5SLD0vCHSp3JKFT6ZLQqXRJ6FTuSMIdKp9UrFGKNUqxRrkYTuVEZZJijVKsUYo1ysVwSehUuiR0Kn9ZsUYp1ijFGuXiw1R+UhI6lS4Jnco7VL5JsUYp1ijFGuXiYUn4TSpdEjqVLgmdykkSvlmxRinWKMUaJb7whyWhU/mfFWuUYo1SrFEu3pSETqVLwpNUOpWTJJyonCThSSqfVKxRijVKsUa5+GUqT0pCp9IloUvCk1S6JJwkoVN5R7FGKdYoxRolvvBBSehU7khCp9IloVO5Iwl3qJwk4Q6VJxVrlGKNUqxRLn5ZEk5U7khCp9Il4Q6VkyTcodIloVN5R7FGKdYoxRolvvCGJHQqJ0k4UemS0KnckYROpUtCp9Il4UTlmxRrlGKNUqxR4gt/WBI6lTuS8CSVLgl3qLyjWKMUa5RijRJfeEMSfpLKSRLuUOmS0Kk8KQmdypOKNUqxRinWKBcPU3lSEk6S0Kl0SehUTlROkvDNijVKsUYp1igXH5aEO1SepNIloVO5Q6VLQqdyRxI6lXcUa5RijVKsUS6GSUKncpKE36TypGKNUqxRijXKxX9GpUtCp9Il4USlS8KJyicVa5RijVKsUS4+TOWTVLokdEm4Iwl3JOGbFGuUYo1SrFEuHpaEn5SEE5WTJHQqdyShUzlJQqfypGKNUqxRijVKfGGNUaxRijVKsUYp1ijFGqVYoxRrlGKNUqxRijVKsUYp1ijFGqVYoxRrlH8jdgPsMRzYHgAAAABJRU5ErkJggg=="
+        alt="noqr"
+        srcset=""
+      />
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+      function qrfunction() {
+        event.preventDefault();
+        var url = document.getElementById("urlname").value;
+        convertQr(url);
+      }
+      function convertQr(url) {
+        console.log(url);
+      }
+    </script>
+  </body>
+</html>
